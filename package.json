@@ -1,19 +1,29 @@
 {
-  "name": "reactapp",
+  "name": "ReactApp-cab",
   "version": "1.0.0",
-  "description": "Use Case for React + Express App",
+  "description": "Use Case for React + Express + MySQL App",
   "main": "server.js",
   "scripts": {
+    "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susanta96/ReactApp-cab.git"
+  },
   "author": "Susanta96",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "mysql": "^2.16.0",
+    "path": "^0.12.7",
+    "router": "^1.3.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
