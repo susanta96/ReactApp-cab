@@ -1,0 +1,18 @@
+.Box{
+    border: 3px solid #ccc;
+    padding: 3px;
+    font-family: inherit;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.BoxSeat {
+    background-image: url('../../../../assets/images/icon-seat.png');
+    height: auto;
+    width: auto;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
