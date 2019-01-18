@@ -16,13 +16,13 @@ class cabfeature extends Component {
             cabfeature = <div className={classes.Box}><i class="fa fa-snowflake-o"> PERSONAL AC CAB</i></div>;
             break;
         case ('cashless'):
-            cabfeature = <div className={classes.Box}><i class="fa fa-cc-visa"> CASHLESS RIDES</i></div>;
+            cabfeature = <div className={classes.Box}><i class="fa fa-credit-card"> CASHLESS RIDES</i></div>;
             break;
         case ('seat'):
-            cabfeature = <div className={classes.Box}><span className={classes.BoxSeat}></span> EXTRA SEAT AVAILABLE</div>;
+            cabfeature = <div className={classes.Box}><i class="fa fa-child"> EXTRA SEAT AVAILABLE</i></div>;
             break;
         case ('luggage'):
-            cabfeature = <div className={classes.Box}><i class="fa  fa-briefcase"> EXTRA LUGGAGE SUPPORT</i></div>;
+            cabfeature = <div className={classes.Box}><i class="fa fa-suitcase"> EXTRA LUGGAGE SUPPORT</i></div>;
             break;
         default: cabfeature = null;
     }
