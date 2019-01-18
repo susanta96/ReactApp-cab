@@ -4,12 +4,6 @@ import CabShowcase from './containers/CabShowcase/CabShowcase';
 
 class App extends Component {
 
-
-  componentDidMount() {
-
-  }
-
-
   render() {
     return (
       <div>
