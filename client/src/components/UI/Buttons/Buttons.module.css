@@ -1,0 +1,21 @@
+Button {
+    height: 60px;
+    width: 150px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+    color: whitesmoke;
+}
+
+.Confirm {
+    background-color: blueviolet;
+    
+    
+}
+
+.Cancel {
+   background-color : #ff8f56;
+}
