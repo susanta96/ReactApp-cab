@@ -1,0 +1,17 @@
+.FilterBox {
+    height: 90vh;
+    width: 270px;
+    position: fixed;
+    background-color: #FFFFFF;
+    font-family: inherit;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.45);
+    align-items: inherit;
+    font-size: 14px;
+    padding-left: 5px;
+}
+h1,h2,h3,h4 {
+    color: blueviolet;
+    text-align: center;
+}

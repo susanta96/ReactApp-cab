@@ -18,10 +18,10 @@ class cabfeature extends Component {
         case ('cashless'):
             cabfeature = <div className={classes.Box}><i class="fa fa-credit-card"> CASHLESS RIDES</i></div>;
             break;
-        case ('seat'):
+        case ('e_seats'):
             cabfeature = <div className={classes.Box}><i class="fa fa-child"> EXTRA SEAT AVAILABLE</i></div>;
             break;
-        case ('luggage'):
+        case ('e_luggage'):
             cabfeature = <div className={classes.Box}><i class="fa fa-suitcase"> EXTRA LUGGAGE SUPPORT</i></div>;
             break;
         default: cabfeature = null;
@@ -31,7 +31,7 @@ class cabfeature extends Component {
   }
 }
 
-cabfeature.PropTypes = {
+cabfeature.propTypes = {
     type: PropTypes.string.isRequired
 };
 

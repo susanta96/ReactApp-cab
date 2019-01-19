@@ -2,10 +2,8 @@
 const express = require('express');
 const bodyParser = require("body-parser");
 const mysql = require('mysql');
-// const http = require('http');
-// var path = require('path');
 const routes = require("./routes/routes");
-
+const cor = require('cors');
 //setting up express
 const app = express();
 
@@ -30,6 +28,9 @@ global.db = connection;
 //Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+
+app.use(cor());
 
 //call the routes
 app.use(routes);

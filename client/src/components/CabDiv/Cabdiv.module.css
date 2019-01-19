@@ -1,7 +1,7 @@
 
   .Cabdiv {
     
-    margin: 20px 0px 20px 280px;
+    margin: 20px 0px 20px 290px;
     width: 70vw;
     height: 35vh;
     display: flex;
@@ -22,10 +22,15 @@
     width: 300px;
     height: auto;
     padding: 20px 5px;
-  }
+    border-radius: 8px  ;
+    -webkit-border-radius: 8px  ;
+    -moz-border-radius: 8px  ;
+    -ms-border-radius: 8px  ;
+    -o-border-radius: 8px  ;
+}
   
   
-  .Content {
+  .details {
     display: flex;
     text-align: left;
     color : #33313b;
@@ -46,9 +51,10 @@
   
   
   .btnStyle {
-    transform: translate(50%, 80px)  ;
-    -webkit-transform: translate(50%, 80px)  ;
-    -moz-transform: translate(50%, 80px)  ;
-    -ms-transform: translate(50%, 80px)  ;
-    -o-transform: translate(50%, 80px)  ;
-}
+    left: 76vw;
+    margin-top: 65px;
+    /* top: 23.5vh; */
+    align-items: baseline;
+    position: absolute;
+    text-align: right;
+  }

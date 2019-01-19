@@ -5,25 +5,30 @@ import Button from '../UI/Buttons/Buttons';
 
 
 const cabdiv  = (props) => {
+
+    
+    // console.log(props.model);
+
+
     return(
         <div className={classes.Cabdiv}>
-            <img src={require('../../assets/images/Maruti-Alto.jpg')} alt="cab" />
+            <img src={require('../../assets/images/'+ props.cabinfo.image)} alt="cab" />
             <div className={classes.details}>
                 <ul>
-                    <li><span>Cab  Model:</span> Maruti Suzuki</li>
-                    <li><span>Cab  Type:</span> Micro</li>
-                    <li><span>Rate:</span> 95 / hr </li>
+                    <li><span>Cab  Model:</span> {props.cabinfo.model}</li>
+                    <li><span>Cab  Type:</span> {props.cabinfo.type} </li>
+                    <li><span>Rate:</span> {props.rate} {props.cabinfo.rate}/ hr </li>
                     <li><span>Cab  Feature:</span> <br />
-                        <CabFeature type="wifi" />
-                        <CabFeature type="seat" />
-                        <CabFeature type="AC" />
-                        <CabFeature type="cashless" />
-                        <CabFeature type="luggage" />
+                       {props.cabinfo.wifi === 1 ? <CabFeature type="wifi" /> : null} 
+                       {props.cabinfo.e_seats === 1 ? <CabFeature type="e_seats" /> : null} 
+                       {props.cabinfo.AC === 1 ? <CabFeature type="AC" /> : null} 
+                       {props.cabinfo.cashless === 1 ? <CabFeature type="cashless" /> : null} 
+                       {props.cabinfo.e_luggage === 1 ? <CabFeature type="e_luggage" /> : null} 
                     </li>    
                 </ul>
             </div>
             <div className={classes.btnStyle}>
-            <Button btnType="Confirm">BOOK NOW</Button>
+            <Button btnType="Confirm" cabid={props.cabinfo.cid}>BOOK NOW</Button>
             </div>
         </div>
     );
