@@ -6,11 +6,59 @@ You can also Filter the Cabs using Left Filter Panel.**But This is not Implement
 
 ## Usage
 
-**Need to install Latest Node.js App** 
+**Need to have install Latest Node.js in the System** 
 
-First, Download the `ReactApp-cab`:
+Then, Download the `ReactApp-cab`:
 
 ```sh
 $ git clone https://github.com/susanta96/ReactApp-cab.git
 ```
 
+After Cloning the App go the folder :
+
+```sh
+$ cd ReactApp-cab
+```
+
+Then, type the command in the `terminal`:
+
+```sh
+$ npm install
+```
+this will install all the neccessary packages for the server.
+Now type this command in the `terminal`:
+```sh
+$ npm run client-install
+```
+Or,
+```sh
+$cd client
+$npm install
+```
+It will install the packages for client.
+
+Now, for run the `server`:
+```sh
+$ npm run server
+```
+And for the `Client`:
+```sh
+$ npm run client
+```
+Or,
+```sh
+$cd client
+$npm start
+```
+**Make sure you use separate terminal for Server & client**
+
+Still, if you wanna run the server & client into the same terminal 
+Just type the Command Below:
+```sh
+$ npm run dev
+```
+Now you can open the browser and go to :
+```http://localhost:3000/```
+
+
+Happy Coding!)
