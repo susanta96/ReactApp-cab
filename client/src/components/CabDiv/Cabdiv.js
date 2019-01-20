@@ -2,12 +2,13 @@ import React from 'react';
 import classes from './Cabdiv.module.css';
 import CabFeature from './CabFeatures/CabFeatures';
 import Button from '../UI/Buttons/Buttons';
-
+import { withRouter } from 'react-router-dom';
 
 const cabdiv  = (props) => {
 
     
-    // console.log(props.model);
+    // console.log(props);
+
 
 
     return(
@@ -28,7 +29,7 @@ const cabdiv  = (props) => {
                 </ul>
             </div>
             <div className={classes.btnStyle}>
-            <Button btnType="Confirm" cabid={props.cabinfo.cid}>BOOK NOW</Button>
+            <Button btnType="Confirm" clicked={props.bookingHandler}>BOOK NOW</Button>
             </div>
         </div>
     );
@@ -39,4 +40,4 @@ const cabdiv  = (props) => {
 };
 
 
-export default cabdiv;
+export default withRouter(cabdiv);
