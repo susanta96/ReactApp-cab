@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import classes from './ContactPage.module.css';
-// import Aux from '../../hoc/Auxx/Auxx';
 import axios from 'axios';
 import Button from '../../components/UI/Buttons/Buttons';
 import Spinner from '../../components/UI/Spinner/Spinner';
@@ -52,10 +51,13 @@ class Contactpage extends Component {
     axios.post( '/booking', bookingInfo )
     .then( response => {
         this.setState( { loading: false } );
-        this.props.history.push( '/' );
+        alert('Check Your Email for Confirmed Booking..!\n');
+        // this.props.history.replace( '/' );
+        window.location.href = "/";
     } )
     .catch( error => {
-        // this.setState( { loading: false } );
+        this.setState( { loading: false } );
+        console.log(error); 
     } );
 
 
