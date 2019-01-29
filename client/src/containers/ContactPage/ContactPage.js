@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import classes from './ContactPage.module.css';
-import axios from 'axios';
+// import axios from 'axios';
 import Button from '../../components/UI/Buttons/Buttons';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import { graphql } from 'react-apollo';
+import { addBookingMutation } from '../../queries/queries';
 
 
 
@@ -23,7 +25,7 @@ class Contactpage extends Component {
     let cabno = 0;
     for ( let param of query.entries() ) {
       if(param[0] === 'cab_id'){
-        cabno = param[1];
+        cabno = +param[1];
       }
     }
     this.setState( { cab_id: cabno } );
@@ -35,30 +37,38 @@ class Contactpage extends Component {
     });
   };
 
-  ConfirmBookinghandler =(event) => {
+  ConfirmBookinghandler = (event) => {
     event.preventDefault();
     this.setState({loading: true});
-    // console.log(this.state.b_date);
-    // console.log(this.state.name);
-    // console.log(this.state.email);
-    // console.log(this.state.cab_id);
-    const bookingInfo = {
-      uname: this.state.name,
-      email: this.state.email,
-      b_date: this.state.b_date,
-      cab_id: this.state.cab_id
-    }
-    axios.post( '/booking', bookingInfo )
-    .then( response => {
-        this.setState( { loading: false } );
-        alert('Check Your Email for Confirmed Booking..!\n');
-        // this.props.history.replace( '/' );
-        window.location.href = "/";
-    } )
-    .catch( error => {
-        this.setState( { loading: false } );
-        console.log(error); 
-    } );
+    this.props.mutate({
+      variables: {
+        uname: this.state.name,
+        email: this.state.email,
+        b_date: this.state.b_date,
+        cab_id: this.state.cab_id
+      }
+    });
+    this.setState( { loading: false } );
+    alert('Check Your Email for Confirmed Booking..!\n');
+    window.location.href = "/";
+
+    // const bookingInfo = {
+    //   uname: this.state.name,
+    //   email: this.state.email,
+    //   b_date: this.state.b_date,
+    //   cab_id: this.state.cab_id
+    // }
+    // axios.post( '/booking', bookingInfo )
+    // .then( response => {
+    //     this.setState( { loading: false } );
+    //     alert('Check Your Email for Confirmed Booking..!\n');
+    //     // this.props.history.replace( '/' );
+    //     window.location.href = "/";
+    // } )
+    // .catch( error => {
+    //     this.setState( { loading: false } );
+    //     console.log(error); 
+    // } );
 
 
   }
@@ -116,4 +126,4 @@ Contactpage.propTypes = {
   classes: PropTypes.object,
 };
 
-export default Contactpage;
+export default graphql(addBookingMutation)(Contactpage);

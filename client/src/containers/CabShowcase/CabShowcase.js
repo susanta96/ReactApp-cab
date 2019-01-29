@@ -2,31 +2,35 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Auxx/Auxx';
 import Cabdiv from '../../components/CabDiv/Cabdiv';
 import classes from './CabShowcase.module.css';
-import FilterBar from '../FilterBar/FilterBar';
-import axios from 'axios';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import FilterBar from '../FilterBar/FilterBar';
+// import axios from 'axios';
+import { graphql } from 'react-apollo';
+import { getCabsQuery } from '../../queries/queries';
 
-export default class CabShowcase extends Component {
+
+class CabShowcase extends Component {
   state = {
-      cabinfo: null,
+      // cabinfo: null,
       error: false,
-      loading: false
+      // loading: false
   };
 
-  componentDidMount() {
+  // componentDidMount() {
     // console.log(this.props);
-    this.setState({loading: true});
-    axios.get('/cabs')
-        .then(res => {
-            this.setState({cabinfo: res.data, loading: false});
-            // console.log(res.data);
+    // this.setState({loading: true});
+    // axios.get('/cabs')
+    //     .then(res => {
+    //         this.setState({cabinfo: res.data, loading: false});
+    //         // console.log(res.data);
 
-        })
-        .catch(err => {
-            this.setState({error: true});
-            // console.log(err);
-        });
-  }
+    //     })
+    //     .catch(err => {
+    //         this.setState({error: true});
+    //         // console.log(err);
+    //     });
+
+  // }
   
   handleBook = (cid) => {
     const queryParams =[];
@@ -42,10 +46,14 @@ export default class CabShowcase extends Component {
 
 
   render() {
-    let  CabShow = <Spinner />;
-    if(this.state.cabinfo) {
-      CabShow = this.state.cabinfo.map(el => <Cabdiv key={el.cid} cabinfo={el} bookingHandler={() => this.handleBook(el.cid)}/>);
+    let CabShow = null;
+    let data = this.props.data;
+    if(data.loading){
+      CabShow = <Spinner />;
+    }else{
+      CabShow = data.cabs.map(el => <Cabdiv key={el.cid} cabinfo={el} bookingHandler={() => this.handleBook(el.cid)}/>);
     }
+   
     return (
       <Aux>
         <FilterBar />
@@ -55,3 +63,5 @@ export default class CabShowcase extends Component {
     );
   }
 }
+
+export default graphql(getCabsQuery)(CabShowcase);
