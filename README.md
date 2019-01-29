@@ -37,6 +37,8 @@ $npm install
 ```
 It will install the packages for client.
 
+Then, You need to Run Phpmyadmin in XAMPP. Then you can import the sql file i added here . 
+
 Now, for run the `server`:
 ```sh
 $ npm run server
