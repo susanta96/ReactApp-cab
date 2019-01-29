@@ -14,7 +14,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//cors middleware
+//allow cross-origin requests
 app.use(cor());
 
 //call the routes
@@ -25,8 +25,6 @@ app.use('/graphql', graphqlHTTP({
 	schema,
 	graphiql: true
 }));
-
-
 
 
 
